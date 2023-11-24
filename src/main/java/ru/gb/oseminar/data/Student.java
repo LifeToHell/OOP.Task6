@@ -5,6 +5,9 @@ import java.time.LocalDate;
 public class Student extends User implements Comparable<Student>{
     private Long studentId;
 
+    //Данный класс реализован по принципу Open Closed Principle. Реализует в себе класс User и расширяет его функционал
+    // добавлением данных studentId. User же имеет абстрактный класс и закрыт для модификации.
+
     public Student(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
         super(firstName, secondName, patronymic, dateOfBirth);
     }

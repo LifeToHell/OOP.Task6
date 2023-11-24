@@ -4,8 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupIterator implements Iterator<Student> {
-
-    private int counter;
+// Класс реализует в себе принцип LSP переопределяя метод Iterator для класса Student, но не меняя её исходную версию
+// и имеет взаимозаменяемость. Не совсем понятна реализация принципа в данном примере кода, где и как его можно использовать,
+// не изменяя при этом значительную часть функционала (реинжиниринг).
+  private int counter;
     private final List<Student> students;
 
     public StudentGroupIterator(StudentGroup studentGroup) {

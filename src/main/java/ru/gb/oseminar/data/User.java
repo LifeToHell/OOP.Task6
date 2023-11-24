@@ -2,7 +2,10 @@ package ru.gb.oseminar.data;
 
 import java.time.LocalDate;
 
-public class User {
+public abstract class  User {
+    // Данный класс реализован по принципу Single Responsibility Principle
+    // Имеет в себе только данные о едином участнике именумом User и не реализует ни каких отдельных функционалов.
+    // Функционал переопределния Equals вынесен из класса для реализации по принципу SRP.
     private String firstName;
     private String secondName;
     private String patronymic;
@@ -57,30 +60,5 @@ public class User {
                '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof User)) {
-            return false;
-        }
 
-        User user = (User) o;
-
-        if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) :
-                user.getFirstName() != null) {
-            return false;
-        }
-        if (getSecondName() != null ? !getSecondName().equals(user.getSecondName()) :
-                user.getSecondName() != null) {
-            return false;
-        }
-        if (getPatronymic() != null ? !getPatronymic().equals(user.getPatronymic()) :
-                user.getPatronymic() != null) {
-            return false;
-        }
-        return getDateOfBirth() != null ? getDateOfBirth().equals(user.getDateOfBirth()) :
-                user.getDateOfBirth() == null;
-    }
 }
